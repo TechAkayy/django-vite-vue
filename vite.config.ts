@@ -1,10 +1,20 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { liveDesigner } from '@pinegrow/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    liveDesigner({
+      devServerUrls: {
+        /* Please ensure that you update this URL with the actual URL of your app-server. */
+        local: 'http://127.0.0.1:8000/', // App-server URL
+      },
+      //...
+    }),
+    vue(),
+  ],
   root: resolve('./src'),
   base: '/static/',
   server: {

@@ -15,10 +15,17 @@
     "jsx": "preserve",
 
     /* Linting */
-    "strict": true,
+    "strict": false,
+    "allowJs": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    // "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "~/*": ["./src/*"],
+      "~~/*": ["./*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
